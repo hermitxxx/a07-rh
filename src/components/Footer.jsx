@@ -17,19 +17,19 @@ export default function Footer() {
           <div className="flex items-center gap-3">
             <a
               aria-label="YouTube"
-              className="flex h-9 w-9 items-center justify-center bg-white text-black rounded-full border border-white/30 transition hover:bg-white/10"
+              className="flex cursor-pointer h-9 w-9 items-center justify-center bg-white text-black rounded-full border border-white/30 transition hover:bg-white/10"
             >
               <FaInstagram size={15} />
             </a>
             <a
               aria-label="Facebook"
-              className="flex h-9 w-9 items-center justify-center bg-white text-black rounded-full border border-white/30 transition hover:bg-white/10"
+              className="flex cursor-pointer h-9 w-9 items-center justify-center bg-white text-black rounded-full border border-white/30 transition hover:bg-white/10"
             >
               <FaFacebookF size={15} />
             </a>
             <a
               aria-label="Twitter"
-              className="flex h-9 w-9 items-center justify-center bg-white text-black rounded-full border border-white/30 transition hover:bg-white/10"
+              className="flex cursor-pointer h-9 w-9 items-center justify-center bg-white text-black rounded-full border border-white/30 transition hover:bg-white/10"
             >
               <FaXTwitter size={15} />
             </a>

@@ -33,8 +33,41 @@ const UserDetail = ({ params }) => {
     const pStyle = 'text-gray-600';
     const cardStyle = 'bg-white rounded-lg space-y-2 shadow-sm p-6 flex items-center justify-center text-center';
 
-    const { data: users, loading, error } = useData()
+    const { data: users, loading, error, timeline, setTimeline } = useData()
     const { userId } = use(params)
+
+    const selectedUser = users.find(user => user.id === parseInt(userId))
+    const currentDate = new Date().toISOString().split('T')[0]
+    // console.log(currentDate);
+
+    function handleContactClick(clicked) {
+        if (clicked === 'call') {
+            const updatedUserDetail = {
+                name: selectedUser.name,
+                date: currentDate,
+                type: 'Call'
+            }
+            setTimeline([...timeline, updatedUserDetail])
+        }
+        else if (clicked === 'text') {
+            const updatedUserDetail = {
+                name: selectedUser.name,
+                date: currentDate,
+                type: 'Text'
+            }
+            setTimeline([...timeline, updatedUserDetail])
+        }
+        else if (clicked === 'video') {
+            const updatedUserDetail = {
+                name: selectedUser.name,
+                date: currentDate,
+                type: 'Video'
+            }
+            setTimeline([...timeline, updatedUserDetail])
+        }
+    }
+
+    console.log(timeline);
 
     if (loading) {
         return <Loading />
@@ -43,7 +76,6 @@ const UserDetail = ({ params }) => {
         return <Error error={error}></Error>
     }
     else {
-        const selectedUser = users.find(user => user.id === parseInt(userId))
         if (!selectedUser) {
             return <Loading />
         }
@@ -114,7 +146,7 @@ const UserDetail = ({ params }) => {
                             </div>
 
                             <div className='max-sm:p-4 bg-white flex-1 rounded-lg shadow-sm flex items-center relative'>
-                                <button className="btn absolute top-11 right-10">Edit</button>
+                                <button className="btn absolute max-sm:top-16 max-sm:right-6 top-11 right-10">Edit</button>
                                 <div className='space-y-6 px-8'>
                                     <h1 className='font-semibold text-custom text-3xl'>Relationship Goal</h1>
                                     <p className='text-gray-500'>Connect every <span className='font-bold text-black'>{selectedUser.goal} days</span></p>
@@ -135,17 +167,17 @@ const UserDetail = ({ params }) => {
                         <div className="bg-white shadow-sm p-4 space-y-5 rounded-lg px-8">
                             <h1 className='text-custom text-lg font-semibold'>Quick Check-In</h1>
                             <div className='grid grid-cols-1 sm:grid-cols-3 gap-4 text-center'>
-                                <div className='space-y-3 hover:opacity-85 cursor-pointer bg-base-200 border flex flex-col items-center border-gray-300 rounded-lg p-4'>
+                                <div onClick={() => handleContactClick('call')} className='space-y-3 hover:opacity-85 cursor-pointer bg-base-200 border flex flex-col items-center border-gray-300 rounded-lg p-4'>
                                     <h1 className={h1Style}><BiPhoneCall /></h1>
-                                    <p className={pStyle}>Days Since Contact</p>
+                                    <p className={pStyle}>Call</p>
                                 </div>
-                                <div className='space-y-3 hover:opacity-85 cursor-pointer bg-base-200 border flex flex-col items-center border-gray-300 rounded-lg p-4'>
+                                <div onClick={() => handleContactClick('text')} className='space-y-3 hover:opacity-85 cursor-pointer bg-base-200 border flex flex-col items-center border-gray-300 rounded-lg p-4'>
                                     <h1 className={h1Style}><LuMessageSquareMore /></h1>
-                                    <p className={pStyle}>Days Since Contact</p>
+                                    <p className={pStyle}>Text</p>
                                 </div>
-                                <div className='space-y-3 hover:opacity-85 cursor-pointer bg-base-200 border flex flex-col items-center border-gray-300 rounded-lg p-4'>
+                                <div onClick={() => handleContactClick('video')} className='space-y-3 hover:opacity-85 cursor-pointer bg-base-200 border flex flex-col items-center border-gray-300 rounded-lg p-4'>
                                     <h1 className={h1Style}><PiVideoCameraBold /></h1>
-                                    <p className={pStyle}>Days Since Contact</p>
+                                    <p className={pStyle}>Video</p>
                                 </div>
                             </div>
                         </div>

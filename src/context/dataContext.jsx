@@ -22,6 +22,10 @@ const DataProvider = ({ children }) => {
     const [error, setError] = useState(null)
 
     const [data, setData] = useState([])
+    const [timeline, setTimeline] = useState([])
+    const [filterArr, setFilterArr] = useState([])
+    const [clickState, setClickState] = useState('all')
+
 
     useEffect(() => {
         const loadData = async () => {
@@ -42,12 +46,18 @@ const DataProvider = ({ children }) => {
 
         loadData()
     }, [])
-    
+
     const value = {
         data,
         setData,
         loading,
-        error
+        error,
+        timeline,
+        setTimeline,
+        filterArr,
+        setFilterArr,
+        clickState,
+        setClickState
     }
 
     return <DataContext.Provider value={value}>{children}</DataContext.Provider>

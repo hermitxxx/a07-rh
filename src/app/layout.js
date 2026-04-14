@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
       lang="en"
       data-theme="light"
     >
-      <body className="bg-base-200">
+      <body className="bg-base-200 px-2">
         <DataProvider>
           <Navbar></Navbar>
           {children}
