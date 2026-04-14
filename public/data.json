@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "John Doe",
-        "picture": "🧑‍🎓",
+        "picture": "🧑",
         "email": "john@example.com",
         "days_since_contact": 12,
         "status": "overdue",
@@ -62,7 +62,7 @@
     {
         "id": 5,
         "name": "Tom Nguyen",
-        "picture": "🧑‍🍳",
+        "picture": "🧑",
         "email": "tom.nguyen@example.com",
         "days_since_contact": 5,
         "status": "on-track",
