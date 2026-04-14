@@ -1,13 +1,12 @@
-'use client'
 import Link from 'next/link';
 import React from 'react';
 
-const error = () => {
+const ShowError = ({ error }) => {
     return (
         <div className='min-h-[calc(100vh-15rem)] flex items-center justify-center'>
-            <div className='text-center space-y-4'>
-                <p className='text-4xl text-custom font-bold'>Something Went Wrong</p>
-                <p className='text-gray-500'>Please try again later.</p>
+            <div className='text-center space-y-5'>
+                <p className='text-4xl text-custom font-bold'>{error}</p>
+                <p className='text-gray-500'>Try finding another user</p>
                 <Link href='/'>
                     <button className="btn bg-custom text-white">
                         Go to home
@@ -18,4 +17,4 @@ const error = () => {
     );
 };
 
-export default error;
+export default ShowError;
