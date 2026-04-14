@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "name": "John Doe",
+        "picture": "🧑‍🎓",
+        "email": "john@example.com",
+        "days_since_contact": 12,
+        "status": "overdue",
+        "tags": [
+            "college",
+            "close friend"
+        ],
+        "bio": "Met in university. Love hiking together.",
+        "goal": 14,
+        "next_due_date": "2025-07-20"
+    },
+    {
+        "id": 2,
+        "name": "Sarah Kim",
+        "picture": "👩‍💻",
+        "email": "sarah.kim@example.com",
+        "days_since_contact": 3,
+        "status": "on-track",
+        "tags": [
+            "work",
+            "mentor"
+        ],
+        "bio": "Senior engineer at my first job. Always gives great advice.",
+        "goal": 7,
+        "next_due_date": "2025-07-25"
+    },
+    {
+        "id": 3,
+        "name": "Marcus Rivera",
+        "picture": "🧔",
+        "email": "marcus.r@example.com",
+        "days_since_contact": 27,
+        "status": "overdue",
+        "tags": [
+            "family",
+            "brother"
+        ],
+        "bio": "Older brother. Lives across the country but we stay close.",
+        "goal": 21,
+        "next_due_date": "2025-07-18"
+    },
+    {
+        "id": 4,
+        "name": "Priya Nair",
+        "picture": "👩‍🎨",
+        "email": "priya.nair@example.com",
+        "days_since_contact": 11,
+        "status": "almost due",
+        "tags": [
+            "friend",
+            "creative"
+        ],
+        "bio": "Illustrator I met at a design workshop. We swap creative projects.",
+        "goal": 14,
+        "next_due_date": "2025-07-22"
+    },
+    {
+        "id": 5,
+        "name": "Tom Nguyen",
+        "picture": "🧑‍🍳",
+        "email": "tom.nguyen@example.com",
+        "days_since_contact": 5,
+        "status": "on-track",
+        "tags": [
+            "neighbor",
+            "casual"
+        ],
+        "bio": "Neighbor who hosts amazing dinner parties. Great cook.",
+        "goal": 30,
+        "next_due_date": "2025-08-10"
+    },
+    {
+        "id": 6,
+        "name": "Elena Morse",
+        "picture": "👩‍⚕️",
+        "email": "elena.morse@example.com",
+        "days_since_contact": 13,
+        "status": "almost due",
+        "tags": [
+            "college",
+            "study group"
+        ],
+        "bio": "Pre-med study partner from sophomore year. Now a resident doctor.",
+        "goal": 14,
+        "next_due_date": "2025-07-21"
+    }
+]

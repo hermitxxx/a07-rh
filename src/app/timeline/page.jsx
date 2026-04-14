@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Test = () => {
+const Timeline = () => {
     return (
         <div>
             <h1 className="text-center text-4xl bg-blue-400 p-2">This is the test page</h1>
@@ -8,4 +8,4 @@ const Test = () => {
     );
 };
 
-export default Test;
+export default Timeline;
