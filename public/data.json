@@ -1,92 +1,122 @@
 [
     {
         "id": 1,
-        "name": "John Doe",
-        "picture": "🧑",
-        "email": "john@example.com",
+        "name": "Tony Stark",
+        "picture": "/iron_man.jpg",
+        "email": "tony.stark@avengers.example",
         "days_since_contact": 12,
         "status": "overdue",
         "tags": [
             "college",
             "close friend"
         ],
-        "bio": "Met in university. Love hiking together.",
+        "bio": "Genius inventor and Avenger. Usually responds between suit upgrades.",
         "goal": 14,
         "next_due_date": "2025-07-20"
     },
     {
         "id": 2,
-        "name": "Sarah Kim",
-        "picture": "👩‍💻",
-        "email": "sarah.kim@example.com",
+        "name": "Clint Barton",
+        "picture": "/clint.jpg",
+        "email": "clint.barton@avengers.example",
         "days_since_contact": 3,
         "status": "on-track",
         "tags": [
             "work",
             "mentor"
         ],
-        "bio": "Senior engineer at my first job. Always gives great advice.",
+        "bio": "Master archer and Avenger. Reliable, grounded, and always on target.",
         "goal": 7,
         "next_due_date": "2025-07-25"
     },
     {
         "id": 3,
-        "name": "Marcus Rivera",
-        "picture": "🧔",
-        "email": "marcus.r@example.com",
+        "name": "Peter Parker",
+        "picture": "/peter_parker.jpg",
+        "email": "peter.parker@dailybugle.example",
         "days_since_contact": 27,
         "status": "overdue",
         "tags": [
             "family",
             "brother"
         ],
-        "bio": "Older brother. Lives across the country but we stay close.",
+        "bio": "Friendly neighborhood hero balancing classes, photos, and city duty.",
         "goal": 21,
         "next_due_date": "2025-07-18"
     },
     {
         "id": 4,
-        "name": "Priya Nair",
-        "picture": "👩‍🎨",
-        "email": "priya.nair@example.com",
+        "name": "Vision",
+        "picture": "/Vision.jpg",
+        "email": "vision@avengers.example",
         "days_since_contact": 11,
         "status": "almost due",
         "tags": [
             "friend",
             "creative"
         ],
-        "bio": "Illustrator I met at a design workshop. We swap creative projects.",
+        "bio": "Synthetic Avenger with calm logic and deep empathy. Thoughtful in every conversation.",
         "goal": 14,
         "next_due_date": "2025-07-22"
     },
     {
         "id": 5,
-        "name": "Tom Nguyen",
-        "picture": "🧑",
-        "email": "tom.nguyen@example.com",
+        "name": "Stephen Strange",
+        "picture": "/dr_strange.jpg",
+        "email": "stephen.strange@sanctum.example",
         "days_since_contact": 5,
         "status": "on-track",
         "tags": [
             "neighbor",
             "casual"
         ],
-        "bio": "Neighbor who hosts amazing dinner parties. Great cook.",
+        "bio": "Sorcerer Supreme. Scheduling may shift due to multiversal emergencies.",
         "goal": 30,
         "next_due_date": "2025-08-10"
     },
     {
         "id": 6,
-        "name": "Elena Morse",
-        "picture": "👩‍⚕️",
-        "email": "elena.morse@example.com",
+        "name": "Bruce Banner",
+        "picture": "/hulk.jpg",
+        "email": "hulk@avengers.example",
         "days_since_contact": 13,
         "status": "almost due",
         "tags": [
             "college",
             "study group"
         ],
-        "bio": "Pre-med study partner from sophomore year. Now a resident doctor.",
+        "bio": "Brilliant scientist and Avenger. Calm in the lab, unstoppable when Hulk shows up.",
         "goal": 14,
         "next_due_date": "2025-07-21"
+    },
+    {
+        "id": 7,
+        "name": "Steve Rogers",
+        "picture": "/steve_rogers.jpg",
+        "email": "steve.rogers@avengers.example",
+        "days_since_contact": 9,
+        "status": "on-track",
+        "tags": [
+            "team",
+            "leader"
+        ],
+        "bio": "Steady leader of the Avengers. Always checks in before missions.",
+        "goal": 14,
+        "next_due_date": "2025-07-24"
+    },
+    {
+        "id": 8,
+        "name": "Thor Odinson",
+        "picture": "/thor.jpg",
+        "email": "thor@newasgard.example",
+        "days_since_contact": 18,
+        "status": "overdue",
+        "tags": [
+            "avenger",
+            "royalty"
+        ],
+        "bio": "God of Thunder. Replies with dramatic updates from across the realms.",
+        "goal": 14,
+        "next_due_date": "2025-07-16"
     }
 ]

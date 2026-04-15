@@ -1,6 +1,7 @@
 'use client'
 import { useData } from '@/context/dataContext';
 import React, { use } from 'react';
+import Image from 'next/image';
 import Loading from '../loading';
 import Error from '../error';
 import { RiNotificationSnoozeLine } from "react-icons/ri";
@@ -9,6 +10,7 @@ import { RiDeleteBinLine } from "react-icons/ri";
 import { BiPhoneCall } from "react-icons/bi";
 import { LuMessageSquareMore } from "react-icons/lu";
 import { PiVideoCameraBold } from "react-icons/pi";
+import { Bounce, toast } from 'react-toastify';
 
 
 
@@ -40,6 +42,18 @@ const UserDetail = ({ params }) => {
     const currentDate = new Date().toISOString().split('T')[0]
     // console.log(currentDate);
 
+    const statusChecker = () => {
+        if (selectedUser.status === 'overdue') {
+            return 'bg-red-400'
+        }
+        else if (selectedUser.status === 'almost due') {
+            return 'bg-amber-400'
+        }
+        else if (selectedUser.status === 'on-track') {
+            return 'bg-custom'
+        }
+    }
+
     function handleContactClick(clicked) {
         if (clicked === 'call') {
             const updatedUserDetail = {
@@ -65,6 +79,17 @@ const UserDetail = ({ params }) => {
             }
             setTimeline([...timeline, updatedUserDetail])
         }
+        toast.success(`${clicked.toUpperCase()} added to timeline`, {
+            position: "top-center",
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+        });
     }
 
     console.log(timeline);
@@ -77,17 +102,20 @@ const UserDetail = ({ params }) => {
     }
     else {
         if (!selectedUser) {
-            return <Loading />
+            if (loading) {
+                return <Loading />
+            }
+            return <Error></Error>
         }
-        else {
+        else if(!loading) {
             return (
                 <section className='bg-base-200'>
-                    <div className="container grid grid-cols-1 sm:grid-cols-[1fr_2fr] mx-auto gap-5 my-10">
+                    <div className="container grid grid-cols-1 sm:grid-cols-[1fr_2fr] mx-auto gap-3 my-10">
                         <div className="user-card">
                             <div href={`/${selectedUser.id}`} className="flex flex-col items-center gap-3 bg-white rounded-2xl border border-gray-100 shadow-sm p-5">
                                 {/* Avatar */}
-                                <div className="w-20 h-20 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center text-4xl">
-                                    {selectedUser.picture}
+                                <div className="w-20 h-20 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center overflow-hidden">
+                                    <Image src={selectedUser.picture} alt={selectedUser.name} width={80} height={80} className="w-full h-full object-cover" />
                                 </div>
 
                                 {/* Name */}
@@ -112,8 +140,8 @@ const UserDetail = ({ params }) => {
 
 
                                 {/* Overdue badge */}
-                                <span className="bg-red-400 text-white text-sm font-medium px-5 py-1.5 rounded-full">
-                                    {selectedUser.status}
+                                <span className={`${statusChecker()} text-white text-sm font-medium px-5 py-1.5 rounded-full`}>
+                                    {selectedUser.status.toUpperCase()}
                                 </span>
 
                                 {/* bio */}
@@ -153,14 +181,14 @@ const UserDetail = ({ params }) => {
                                 </div>
                             </div>
                         </div>
-                        <div className="flex flex-col gap-2">
-                            <div className='flex items-center p-4 cursor-pointer rounded-lg shadow-sm flex-1 gap-2 bg-white justify-center font-semibold text-xl'>
+                        <div className="flex flex-col gap-1">
+                            <div className='flex items-center p-4 cursor-pointer rounded-lg shadow-sm flex-1 gap-2 bg-white justify-center font-semibold text-lg'>
                                 <RiNotificationSnoozeLine />Snooze 2 weeks
                             </div>
-                            <div className='flex items-center p-4 cursor-pointer rounded-lg shadow-sm flex-1 gap-2 bg-white justify-center font-semibold text-xl'>
+                            <div className='flex items-center p-4 cursor-pointer rounded-lg shadow-sm flex-1 gap-2 bg-white justify-center font-semibold text-lg'>
                                 <FiArchive />Archive
                             </div>
-                            <div className='flex items-center p-4 cursor-pointer rounded-lg shadow-sm text-red-400 flex-1 gap-2 bg-white justify-center font-semibold text-xl'>
+                            <div className='flex items-center p-4 cursor-pointer rounded-lg shadow-sm text-red-400 flex-1 gap-2 bg-white justify-center font-semibold text-lg'>
                                 <RiDeleteBinLine />Delete
                             </div>
                         </div>

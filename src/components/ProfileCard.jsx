@@ -15,13 +15,25 @@
 //     }
 
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ProfileCard({ user }) {
+    const statusChecker = () => {
+        if (user.status === 'overdue') {
+            return 'bg-red-400'
+        }
+        else if (user.status === 'almost due') {
+            return 'bg-amber-400'
+        }
+        else if (user.status === 'on-track') {
+            return 'bg-custom'
+        }
+    }
     return (
         <Link href={`/${user.id}`} className="flex flex-col items-center gap-3 bg-white rounded-2xl border border-gray-100 shadow-sm p-8">
             {/* Avatar */}
-            <div className="w-20 h-20 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center text-4xl">
-                {user.picture}
+            <div className="w-20 h-20 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center overflow-hidden">
+                <Image src={user.picture} alt={user.name} width={80} height={80} className="w-full h-full object-cover" />
             </div>
 
             {/* Name */}
@@ -46,8 +58,8 @@ export default function ProfileCard({ user }) {
 
 
             {/* Overdue badge */}
-            <span className="bg-red-400 text-white text-sm font-medium px-5 py-1.5 rounded-full">
-                {user.status}
+            <span className={`${statusChecker()} text-white text-sm font-medium px-5 py-1.5 rounded-full`}>
+                {user.status.toUpperCase()}
             </span>
         </Link>
     );

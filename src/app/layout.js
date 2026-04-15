@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import DataProvider from "@/context/dataContext";
 import Footer from "@/components/Footer";
+import { Bounce, ToastContainer } from "react-toastify";
 
 export const metadata = {
   title: "Create Next App",
@@ -22,6 +23,19 @@ export default function RootLayout({ children }) {
             {children}
           </section>
           <Footer></Footer>
+          <ToastContainer
+            position="top-center"
+            autoClose={1000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick={false}
+            rtl={false}
+            pauseOnFocusLoss={false}
+            draggable
+            pauseOnHover={false}
+            theme="light"
+            transition={Bounce}
+          />
         </DataProvider>
       </body>
     </html>
