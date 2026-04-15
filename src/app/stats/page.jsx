@@ -6,7 +6,7 @@ import React from 'react';
 const Stats = () => {
     const { timeline } = useData()
     return (
-        <section className='border border-amber-400 min-h-[calc(100vh-15rem)] my-5 py-10'>
+        <section className='min-h-[calc(100vh-15rem)] my-5 py-10'>
             <div className='container mx-auto'>
                 <h1 className='text-4xl font-bold'>Friendship Analytics</h1>
 

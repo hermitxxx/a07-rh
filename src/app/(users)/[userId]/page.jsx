@@ -12,24 +12,6 @@ import { LuMessageSquareMore } from "react-icons/lu";
 import { PiVideoCameraBold } from "react-icons/pi";
 import { Bounce, toast } from 'react-toastify';
 
-
-
-// {
-//     "id": 1,
-//     "name": "John Doe",
-//     "picture": "🧑",
-//     "email": "john@example.com",
-//     "days_since_contact": 12,
-//     "status": "overdue",
-//     "tags": [
-//         "college",
-//         "close friend"
-//     ],
-//     "bio": "Met in university. Love hiking together.",
-//     "goal": 14,
-//     "next_due_date": "2025-07-20"
-// }
-
 const UserDetail = ({ params }) => {
     const h1Style = 'text-3xl text-custom font-semibold';
     const pStyle = 'text-gray-600';
