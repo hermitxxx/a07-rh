@@ -15,10 +15,12 @@ export default function RootLayout({ children }) {
       lang="en"
       data-theme="light"
     >
-      <body className="bg-base-200 px-2">
+      <body className="bg-base-200">
         <DataProvider>
           <Navbar></Navbar>
-          {children}
+          <section className="px-2">
+            {children}
+          </section>
           <Footer></Footer>
         </DataProvider>
       </body>
