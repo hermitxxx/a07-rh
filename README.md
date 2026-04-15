@@ -1,4 +1,4 @@
-# 🤝 Friendship Hub
+# 🤝 KeenKeeper
 
 A modern relationship management application that helps you stay connected with friends and loved ones by tracking interactions and providing meaningful insights into your relationships.
 
