@@ -37,7 +37,7 @@ const Timeline = () => {
         <div className='container mx-auto py-10'>
             <h1 className="text-4xl p-2 font-bold">Timeline</h1>
             <div className='mb-4'>
-                <details className="dropdown bg-white">
+                <details className="dropdown bg-white rounded-lg">
                     <summary className="btn m-1 font-medium">{clickState.toUpperCase()} <MdKeyboardArrowDown /></summary>
                     <ul className="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
                         <li onClick={() => handleFilter('All')}><a>All</a></li>
