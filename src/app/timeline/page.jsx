@@ -53,7 +53,7 @@ const Timeline = () => {
                     clickState === 'all' && timeline.length > 0 ? timeline.map((history, index) => <TimelineCard key={index} history={history}></TimelineCard>) : <div className={`min-h-[calc(100vh-25rem)] flex items-center justify-center ${clickState !== 'all' && 'hidden'}`}><div className='space-y-5 text-center'><h1 className='font-semibold text-custom text-3xl'>Nothing in timeline</h1><Link href='/' className="btn bg-custom text-white font-medium">Go to gome</Link></div></div>
                 }
                 {
-                    clickState !== 'all' && filterArr.map((history, index) => <TimelineCard key={index} history={history}></TimelineCard>)
+                    clickState !== 'all' && filter.length > 0 ? filterArr.map((history, index) => <TimelineCard key={index} history={history}></TimelineCard>) : <h1 className='font-semibold text-custom text-3xl'>Nothing in {clickState.toUpperCase()}</h1>
                 } 
             </div>
         </div>
